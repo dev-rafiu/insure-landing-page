@@ -1,0 +1,48 @@
+@use "utils";
+
+// find more
+.find-more .container {
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--dark-violet)
+    url(../images/bg-pattern-how-we-work-mobile.svg);
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-size: 10rem;
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 5rem;
+
+  h1 {
+    letter-spacing: 0.2rem;
+  }
+
+  a {
+    border: 1px solid var(--white);
+    color: inherit;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background: var(--white);
+      color: var(--dark-violet);
+    }
+  }
+
+  @include utils.breakpoint(desktop) {
+    & {
+      flex-direction: row;
+      justify-content: space-between;
+      background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+      background-size: auto;
+
+      .heading {
+        text-align: left;
+      }
+
+      span.block {
+        display: block;
+      }
+    }
+  }
+}

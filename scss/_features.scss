@@ -1,0 +1,66 @@
+@use "utils";
+
+#features .container {
+  text-align: center;
+  margin-block: 5rem;
+  padding: 0 2rem;
+  //   background: pink;
+
+  .title,
+  .sub-title {
+    color: var(--dark-violet);
+  }
+
+  .title {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  .title::before {
+    content: "";
+    width: 20%;
+    height: 2px;
+    background: lightgray;
+    display: block;
+    margin-inline: auto;
+    margin-block: 1rem;
+  }
+
+  .features__list {
+    flex-direction: column;
+    gap: 2rem;
+
+    .sub-title {
+      margin: 1rem 0;
+    }
+
+    p {
+      color: var(--dark-grayish-violet);
+    }
+  }
+
+  @include utils.breakpoint(tablet) {
+    & {
+      text-align: left;
+    }
+    .title::before {
+      content: "";
+      width: 10%;
+      height: 2px;
+      background: lightgray;
+      display: block;
+      margin-inline: 0;
+      margin-block: 1rem;
+    }
+    .features__list {
+      flex-direction: row;
+    }
+  }
+
+  @include utils.breakpoint(desktop) {
+    & {
+      margin-top: 7rem;
+      padding: 0;
+    }
+  }
+}

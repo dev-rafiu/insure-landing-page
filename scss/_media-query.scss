@@ -1,0 +1,51 @@
+@use "utils";
+
+@include utils.breakpoint(tablet) {
+  // about
+  #about {
+    text-align: left;
+    .title::before {
+      margin-inline: 0;
+    }
+
+    .benefits {
+      flex-direction: row;
+    }
+  }
+
+  // more
+  .find-more {
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1 {
+      text-align: left;
+      &::before {
+        margin: 0;
+        height: 2rem;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .footer {
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .links-group {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@include utils.breakpoint(desktop) {
+  .main-header,
+  #about {
+    padding-inline: 0;
+  }
+}
